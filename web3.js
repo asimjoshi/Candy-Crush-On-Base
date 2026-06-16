@@ -2,8 +2,8 @@
 const BASE_CHAIN_ID = 8453; // Hex: 0x2105
 const BASE_CHAIN_ID_HEX = '0x2105';
 
-// Encoded Builder String for bc_sjkexp2o
-const BUILDER_STRING = '0x62635f736a6b657870326f0b00802180218021802180218021802180218021';
+// Encoded Builder String for bc_rax3mq63
+const BUILDER_STRING = '0x62635f726178336d7136330b0080218021802180218021802180218021';
 const BUILDER_STRING_NO_PREFIX = BUILDER_STRING.substring(2);
 
 // Optionally, user can supply a Smart Contract address.
