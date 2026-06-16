@@ -1,0 +1,10 @@
+- [x] Generate Smart Contract (CandyCrushBase.sol) and compile it to get ABI and Bytecode.
+- [x] Create `index.html` with modern UI, onboarding screen, and game grid.
+- [x] Create `style.css` for beautiful, soft-colored, glassmorphism design.
+- [x] Create `game.js` with match-3 logic, drag/swipe handling, and level progression.
+- [x] Create `web3.js` integrating Ethers.js:
+  - [x] Wallet connection & Base L2 network enforcement.
+  - [x] One-click contract deployment from the browser (if not already deployed).
+  - [x] Daily check-in triggering `checkIn()` on the contract and appending the Base Builder String.
+  - [x] Score submission triggering `submitScore(score)` and appending the Base Builder String.
+- [x] Verify functionality.

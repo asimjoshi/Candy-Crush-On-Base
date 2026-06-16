@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Candy Crush On Base</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=126">
+    <!-- Ethers.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.0/ethers.umd.min.js"></script>
+</head>
+<body>
+
+    <!-- Onboarding Screen -->
+    <div id="onboarding-screen" class="screen active">
+        <div class="profile-badge">
+            <img src="avatar.png" alt="Avatar" id="user-avatar" onerror="this.outerHTML='<svg viewBox=\'0 0 100 100\' style=\'width:40px;height:40px;border-radius:50%;border:2px solid #0052ff;\'><rect width=\'100\' height=\'100\' fill=\'#1a1a2e\'/><circle cx=\'50\' cy=\'40\' r=\'20\' fill=\'#0052ff\'/><path d=\'M 20 100 Q 50 60 80 100\' fill=\'#0052ff\'/></svg>'">
+            <span>0xAasim</span>
+        </div>
+        <div class="glass-panel">
+            <h1 class="title">Candy Base</h1>
+            <p class="subtitle">Match candies, build onchain.</p>
+            
+            <button id="connect-wallet-btn" class="primary-btn">Connect Wallet</button>
+            <p id="wallet-address-display" class="wallet-text"></p>
+            
+            <button id="check-in-btn" class="action-btn hidden">Daily Check-in (Potential Base Reward)</button>
+            <button id="start-game-btn" class="secondary-btn hidden">Start Game</button>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen hidden">
+        <div class="game-header">
+            <div class="stat-box">
+                <span class="stat-label">Level</span>
+                <span id="level-display" class="stat-value">1</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Score</span>
+                <span id="score-display" class="stat-value">0</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Moves</span>
+                <span id="moves-display" class="stat-value">15</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Target</span>
+                <span id="target-display" class="stat-value">1000</span>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div id="grid"></div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="network-warning" class="modal hidden">
+        <div class="modal-content">
+            <h2>Wrong Network</h2>
+            <p>You are currently not on the Base network. Please switch to Base L2 to continue.</p>
+            <button id="switch-network-btn" class="primary-btn">Switch to Base</button>
+        </div>
+    </div>
+
+    <div id="transaction-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="tx-title">Processing...</h2>
+            <p id="tx-message">Please confirm the transaction in your wallet.</p>
+            <div class="spinner" id="tx-spinner"></div>
+            <button id="tx-close-btn" class="secondary-btn hidden">Close</button>
+        </div>
+    </div>
+
+    <div id="game-over-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="go-title">Level Cleared!</h2>
+            <p id="go-message">You have reached the target score.</p>
+            <button id="submit-score-btn" class="primary-btn">Submit Score (Onchain)</button>
+            <button id="next-level-btn" class="secondary-btn hidden">Next Level</button>
+            <button id="restart-btn" class="secondary-btn hidden">Restart Level</button>
+        </div>
+    </div>
+
+    <script src="web3.js?v=8"></script>
+    <script src="sound.js?v=8"></script>
+    <script src="game.js?v=8"></script>
+</body>
+</html>
